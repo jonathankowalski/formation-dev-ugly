@@ -11,5 +11,5 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 
 $app->post('/', function (Request $request, Response $response, array $args) {
-    return $this->renderer->render($response, 'bim.phtml', $this->app->run($request->getParsedBody()));
+    return $this->renderer->render($response, 'bim.phtml', ['urls' => $this->app->run($request->getParsedBody())]);
 });
